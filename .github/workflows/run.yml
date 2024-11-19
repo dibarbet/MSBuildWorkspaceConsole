@@ -16,7 +16,7 @@ jobs:
       run: dotnet pack -c Release
 
     - name: Add Tool
-      run: dotnet tool restore
+      run: dotnet tool install --add-source .\MSBuildWorkspaceRunner\nupkg\ MSBuildWorkspaceRunner
 
     - name: Run Tool
       run: dotnet tool run msbuildworkspace "${{ github.workspace }}/MSBuildWorkspaceConsole.sln"
